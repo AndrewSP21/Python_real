@@ -1,21 +1,15 @@
-def int_func(word):
-    return word.capitalize()
+def int_func(string: str):
+    return ''.join((string[0].upper(), string[1:])) if string else string
 
 
-def line_func(row):
-    """
-    Функция принимает строку и преобразует в список. Каждый элемент списка извлекает и первую букву элемента делает
-    заглавной. Сохраняет элемент в списке. Список обратно преобразует в строку.
-    :param row: Строка
-    :return: Строка
-    """
-    line = row.split()
-    for v in line:
-        line[line.index(v)] = int_func(v)
-    result = " ".join(line)
-    return result
+def user_temp(string: str):
+    return ' '.join(map(int_func, string.split(' ')))
 
 
-var = 'Каждое слово состоит из латинских букв в нижнем регистре. Сделать вывод исходной строки, но каждое слово ' \
-      'должно начинаться с заглавной буквы. Необходимо использовать написанную ранее функцию int_func().'
-print(line_func(var))
+assert int_func('колбаса') == 'Колбаса', "int_func('колбаса')"
+assert int_func('самса') == 'Самса', "int_func('самса')"
+assert int_func('') == '', "int_func('')"
+
+assert user_temp('колбаса с сыром') == 'Колбаса С Сыром', "user_temp('колбаса с сыром')"
+assert user_temp('самса с ветчиной') == 'Самса С Ветчиной', "user_temp('самса с ветчиной')"
+assert user_temp('') == '', "user_temp('')"
