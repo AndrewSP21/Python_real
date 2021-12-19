@@ -1,0 +1,6 @@
+John
+Один
+Два
+Три
+Kate
+My string
