@@ -30,5 +30,3 @@ with open("additionally/for_L57.json", "w", encoding='utf') as write_f:
     write_f.write(json.dumps(result, ensure_ascii=False))
 
 
-
-

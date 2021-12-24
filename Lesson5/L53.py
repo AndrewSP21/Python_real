@@ -26,3 +26,5 @@ with open(r"additionally/for_L53.txt", encoding='utf') as f_obj:
             list4.append(el3)
 
     print(f'Средний доход сотрудников: {round(mean(list3),2)}, \nСписок сотрудников имеющих доход ниже 20000: {list4}')
+
+
